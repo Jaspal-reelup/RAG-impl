@@ -51,10 +51,12 @@ class RAGNodes:
         wiki=WikipediaQueryRun(
             api_wrapper=WikipediaAPIWrapper(top_k_results=3,lang="en")
         )
+        def wikipedia_tool_fn(query: str) -> str:
+            return wiki.run(query)
         wikipedia_tool=Tool(
             name="wikipedia",
             description="Search Wikipedia for general knowledge.",
-            func=wiki.run
+            func=wikipedia_tool_fn
         )
 
         return [retriever_tool,wikipedia_tool]

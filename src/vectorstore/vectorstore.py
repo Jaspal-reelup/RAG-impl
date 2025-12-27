@@ -12,7 +12,7 @@ class VectorStore:
         self.vectorstore=None
         self.retriever=None
 
-    def create_retriever(self,documents: List[Document]):
+    def create_vectorstore(self,documents: List[Document]):
         """
         Create vector store from documents
 

@@ -17,7 +17,7 @@ class GraphBuilder:
             llm: Language model instance
         """
 
-        self.nodes=RAGNodes()
+        self.nodes=RAGNodes(retriever,llm)
         self.graph=None
 
     def build(self):
